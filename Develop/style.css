@@ -13,10 +13,6 @@ textArea{
   padding: 10px;
 }
 
-/* input {
-  border: none;
-} */
-
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -33,20 +29,15 @@ textArea{
   text-align: center;
   border-radius: 15px;
 }
- .col-10 {
-  border: 2px solid black;
- }
-
- .col-1 {
-  border: 2px solid black;
- }
  
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border: 2px solid black;
   border-top: 1px solid white;;
-  
+}
+
+.test {
+  border: 2px solid black;
 }
 
 .hour {
