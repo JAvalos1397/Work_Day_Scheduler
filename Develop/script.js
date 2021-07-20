@@ -10,9 +10,14 @@ function displayTime() {
 }
 
 //save feature
-var upper = $('.textArea');
 
-
+function test(){
+    var events = $('.textArea');
+console.log(events[1].value)
+}
+// $('.saveBtn').addEventListener('click', function(){
+//     console.log("true")
+// })
 
 
 
@@ -42,7 +47,6 @@ function currtentTime() {
     // console.log(timeBlocks)
     for (let i = 0; i < timeBlocks.length ; i++) {
         index = parseInt(timeBlocks[i].id);
-        // timeID = "#" +timeBlocks[i].id  
         if (index < hour()) {
             // console.log("past", index)
             $(timeBlocks[i]).addClass('past');
@@ -50,8 +54,7 @@ function currtentTime() {
             // console.log("present", index);
             $(timeBlocks[i]).addClass('present');
         } else if (index > hour()) {
-            console.log("future", index)
-            // $("#12").addClass('future')
+            // console.log("future", index)
             $(timeBlocks[i]).addClass('future');
         }        
     } 
@@ -64,5 +67,5 @@ setInterval(function () {
     displayTime();
     hour();
     currtentTime();
-
+    test()
 }, 1000);
