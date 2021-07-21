@@ -1,33 +1,31 @@
 var today = moment();
 
 //current day
-$("#currentDay").text(today.format("[Today is] dddd, MMM Do ss"));
+$("#currentDay").text(today.format("[Today is] dddd, MMM Do"));
 //time gets updated
 function displayTime() {
     var today = moment();
-    $("#currentDay").text(today.format("[Today is] dddd, MMM Do ss"));
+    $("#currentDay").text(today.format("[Today is] dddd, MMM Do"));
   
 }
 
 //save feature
 
-function test(){
-    var events = $('.textArea');
-console.log(events[1].value)
-}
-// $('.saveBtn').addEventListener('click', function(){
-//     console.log("true")
-// })
+$('.saveBtn').on('click', function(){
 
+     var value = $(this).siblings(".description").val()
+     var time = $(this).parent().id
 
+     console.log(value)
+     console.log(time)
+     localStorage.setItem(time, value)
 
-
-
-
-
-
-
-
+    })
+// for (let index = 0; index < array.length; index++) {
+//     var displayEvent = ".description " + 
+//     $('#hour-0 .description').val(localStorage.getItem("hour-0"))
+// }
+    $('#hour-0 .description').val(localStorage.getItem("hour-0"))
 
 
 
@@ -47,6 +45,7 @@ function currtentTime() {
     // console.log(timeBlocks)
     for (let i = 0; i < timeBlocks.length ; i++) {
         index = parseInt(timeBlocks[i].id);
+        
         if (index < hour()) {
             // console.log("past", index)
             $(timeBlocks[i]).addClass('past');
@@ -62,10 +61,11 @@ function currtentTime() {
 
 currtentTime()
 
+
+
 //updating time
 setInterval(function () {
     displayTime();
     hour();
     currtentTime();
-    test()
-}, 1000);
+}, 1200000); //repeats every 20min
