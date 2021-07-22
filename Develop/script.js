@@ -23,13 +23,13 @@ $('.saveBtn').on('click', function () {
 
 })
 function displayEvent() {
-    for (let i = 0; i < desc.length; i++) {
+    for (let i = 0; i < 9; i++) {
         var hourOfDay = $(desc[i]).attr('id');
         
         console.log(hourOfDay);
 
         var events = "#" + hourOfDay
-        // console.log(events);
+        console.log(events);
 
         $(events).val(localStorage.getItem(hourOfDay))
     }
@@ -52,11 +52,11 @@ function hour() {
 function currtentTime() {
     var timeBlocks = $(".colorCode")
     // console.log(timeBlocks)
-    for (let i = 0; i < timeBlocks.length; i++) {
+    for (let i = 0; i < 9; i++) {
         index = parseInt(timeBlocks[i].id);
-
+        console.log(index)
         if (index < hour()) {
-            // console.log("past", index)
+            console.log("past", index)
             $(timeBlocks[i]).addClass('past');
         } else if (index === hour()) {
             // console.log("present", index);
